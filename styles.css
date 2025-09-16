@@ -1,0 +1,101 @@
+/* Part 1: CSS3 Transitions and Animations */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2rem;
+  background: #f9f9f9;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Button Hover Transition */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+button:hover {
+  background: #2980b9;
+  transform: scale(1.1); /* Grows slightly */
+}
+
+/* Box Animation */
+#box {
+  width: 100px;
+  height: 100px;
+  margin: 2rem auto;
+  background: coral;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Active class triggers transform */
+.move {
+  transform: translateX(200px) rotate(45deg);
+}
+
+/* Modal Styles */
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s;
+}
+
+#modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  animation: slideIn 0.5s ease-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-100px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/* Continuous Animation: Bouncing Ball */
+#ball {
+  width: 50px;
+  height: 50px;
+  background: crimson;
+  border-radius: 50%;
+  margin: 2rem auto;
+  position: relative;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-150px);
+  }
+}
